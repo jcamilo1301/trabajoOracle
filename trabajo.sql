@@ -10,7 +10,7 @@ DATAFILE 'undouber.dbf' SIZE 25M;
 
 -- c) Bigfile tablespace of 5Gb
 CREATE BIGFILE TABLESPACE  bigfileuber
-DATAFILE 'undouber.dbf' SIZE 25M;
+DATAFILE 'bigfileuber.dbf' SIZE 25M;
 
 -- d)Set the undo tablespace to be used in the system
 
