@@ -15,16 +15,13 @@ DATAFILE 'bigfileuber.dbf' SIZE 25M;
 -- d)Set the undo tablespace to be used in the system
 
 ------------- 3
-CREATE USER DBA
+CREATE USER DBAUSER
 IDENTIFIED BY "123456"
 DEFAULT TABLESPACE uber
 QUOTA UNLIMITED ON uber;
---crear role
-CREATE ROLE DBA;
---permisos de coneccion al rol DBA
-GRANT CONNECT TO DBA;
+
 --asignar rol a usuario
-GRANT DBA TO DBA;
+GRANT DBA TO DBAUSER;
 
 ------------ 4 Create 2 profiles.
 -- a) Profile 1: "clerk" password life 40 days, one session per user, 10 minutes idle, 4 failed login attempts
