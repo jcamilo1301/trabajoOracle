@@ -43,7 +43,6 @@ imagen_url      nvarchar2(255),
 telefono        nvarchar2(255),
 tipo_usuario    nvarchar2(255),
 usuario         int,
-emails          json,
 idioma          nvarchar2(20),
 ciudad_id       int,
 CONSTRAINT check_tipo_usuario
@@ -53,7 +52,14 @@ CONSTRAINT fk_ciudades
     REFERENCES CUIDADES (id)
 );
 
-
+CREATE TABLE EMAILS(
+id              int PRIMARY KEY,
+usuario_id      int,
+email           varchar2(64),
+CONSTRAINT fk_usuarios
+    FOREIGN KEY (usuario_id)
+    REFERENCES USUARIOS (id)
+);
 
 CREATE TABLE ASIGNACIONES_VEHICULOS(
 id              int PRIMARY KEY,
@@ -95,10 +101,31 @@ CREATE TABLE MEDIOS_PAGO_USUARIO(
 id int PRIMARY KEY,
 usuario_id INT,
 medio_pago_detalle nvarchar2(255),
- CONSTRAINT fk_usuario_medios_pago
+estado varchar2(8),
+tipo varchar2(64),
+CONSTRAINT check_estado
+    CHECK (estado IN('Activo','Inactivo')),
+CONSTRAINT check_tipo
+    CHECK (tipo IN('Tarjeta de crédito','Tarjeta débito','Cuenta de ahorros','PayPay','Android')),
+  CONSTRAINT fk_usuario_medios_pago
     FOREIGN KEY (usuario_id)
     REFERENCES USUARIOS (id)
 );
+
+CREATE TABLE CONFIGURACION_ENVIO_RECIBOS (
+id int PRIMARY KEY,
+email_id int,
+medio_pago_usuario_id int,
+    CONSTRAINT fk_emails
+    FOREIGN KEY (email_id)
+    REFERENCES EMAILS (id),
+    
+    CONSTRAINT fk_medio_pago_usuario
+    FOREIGN KEY (medio_pago_usuario_id)
+    REFERENCES MEDIOS_PAGO_USUARIO (id)
+
+);
+
 
 CREATE TABLE USUARIOS_EMPRESAS(
 id INT PRIMARY KEY,
@@ -164,6 +191,11 @@ id              int PRIMARY KEY,
 servicio_id     int,
 medio_pago_id int,
 valor number,
+estado varchar2(16),
+
+CONSTRAINT check_estado
+    CHECK (estado IN('Liquidada','Pendiente')),
+
 comision number generated always as (valor * 0.34) virtual,
  CONSTRAINT fk_detalle_facturas_servicios
     FOREIGN KEY (servicio_id)
@@ -195,6 +227,9 @@ id int PRIMARY KEY,
 conductor_id int,
 medio_pago_id int,
 valor number,
+fecha_corte_incial TIMESTAMP,
+fecha_corte_final TIMESTAMP,
+observaciones varchar2(2048),
  CONSTRAINT fk_pagos_medio_pago
     FOREIGN KEY (medio_pago_id)
     REFERENCES MEDIOS_PAGO_USUARIO (id),
@@ -202,4 +237,3 @@ valor number,
     FOREIGN KEY (conductor_id)
     REFERENCES USUARIOS (id)
 );
-
