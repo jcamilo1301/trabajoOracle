@@ -17,19 +17,10 @@ CONSTRAINT check_tipo_vehiculo
 CHECK (tipo_vehiculo IN('Uber X','Uber Black'))
 );
 
-CREATE TABLE PERSONAS(
-id              int PRIMARY KEY,
-nombre          nvarchar2(255),
-apellido        nvarchar2(255),
-email           nvarchar2(255),
-imagen_url      nvarchar2(255),
-telefono        nvarchar2(255)
-);
-
 
 CREATE TABLE CUIDADES (
 id              int PRIMARY KEY,
-descripcion     nvarchar2(255),
+nombre           nvarchar2(255),
 pais_id         int,
 CONSTRAINT fk_paises
     FOREIGN KEY (pais_id)
@@ -46,17 +37,17 @@ direccion       nvarchar2(255)
 
 CREATE TABLE USUARIOS(
 id              int PRIMARY KEY,
-persona_id      int,
+nombre          nvarchar2(255),
+apellido        nvarchar2(255),
+imagen_url      nvarchar2(255),
+telefono        nvarchar2(255),
 tipo_usuario    nvarchar2(255),
 usuario         int,
-contraseña      int,
+emails          json,
 idioma          nvarchar2(20),
 ciudad_id       int,
 CONSTRAINT check_tipo_usuario
     CHECK (tipo_usuario IN('Empresarial','Conductor','Cliente')),
-CONSTRAINT fk_personas
-    FOREIGN KEY (persona_id)
-    REFERENCES PERSONAS (id),
 CONSTRAINT fk_ciudades
     FOREIGN KEY (ciudad_id)
     REFERENCES CUIDADES (id)
@@ -64,7 +55,7 @@ CONSTRAINT fk_ciudades
 
 
 
-CREATE TABLE USUARIOS_VEHICULOS(
+CREATE TABLE ASIGNACIONES_VEHICULOS(
 id              int PRIMARY KEY,
 usuario_id      int,
 vehiculo_id     int,
@@ -113,6 +104,13 @@ CREATE TABLE USUARIOS_EMPRESAS(
 id INT PRIMARY KEY,
 usuario_id INT,
 empresa_id INT,
+estados char(1),
+fecha_inicio TIMESTAMP,
+fecha_fin TIMESTAMP,
+
+ CONSTRAINT check_estados
+    CHECK (estados IN('Y','N')),
+
  CONSTRAINT fk_usuario_empresas_usuario
     FOREIGN KEY (usuario_id)
     REFERENCES USUARIOS (id),
@@ -125,8 +123,7 @@ CREATE TABLE SERVICIOS(
 id int PRIMARY KEY,
 cliente_id int,
 cliente_compartido_id int,
-medio_pago_id int,
-usuario_vehiculo_id int,
+asignacion_vehiculo_id int,
 distancia_recorrida int,
 tiempo_requerido int,
 fecha_inicio TIMESTAMP,
@@ -136,7 +133,6 @@ estado nvarchar2(20),
 tarifa_dinamica char(1),
 direccion_origen nvarchar2(255),
 direccion_destino nvarchar2(255),
-valor number,
  CONSTRAINT fk_cliente_factura
     FOREIGN KEY (cliente_id)
     REFERENCES USUARIOS (id),
@@ -145,10 +141,9 @@ valor number,
     FOREIGN KEY (cliente_compartido_id)
     REFERENCES USUARIOS (id),
     
-    CONSTRAINT fk_servicio_usuarios_vehiculos
-    FOREIGN KEY (usuario_vehiculo_id)
-    REFERENCES USUARIOS_VEHICULOS (id),
-    
+    CONSTRAINT fk_servicio_asignaciones_vehiculos
+    FOREIGN KEY (asignacion_vehiculo_id)
+    REFERENCES ASIGNACIONES_VEHICULOS (id),   
     
     
     CONSTRAINT fk_servicio_medio_pagos
@@ -164,26 +159,36 @@ valor number,
   
 );
 
-CREATE TABLE DETALLE_SERVICIOS(
-id int PRIMARY KEY,
-servicio_id int,
-concepto nvarchar2(255),
+CREATE TABLE FACTURAS(
+id              int PRIMARY KEY,
+servicio_id     int,
+medio_pago_id int,
 valor number,
-   CONSTRAINT fk_detalle_servicios_servicios
+comision number generated always as (valor * 0.34) virtual,
+ CONSTRAINT fk_detalle_facturas_servicios
     FOREIGN KEY (servicio_id)
     REFERENCES SERVICIOS (id)
 );
 
-CREATE TABLE DETALLE_SERVICIOS_UBICACION(
+CREATE TABLE DETALLE_FACTURAS(
+id int PRIMARY KEY,
+factura_id int,
+concepto nvarchar2(255),
+valor number,
+   CONSTRAINT fk_detalle_facturas_facturas
+    FOREIGN KEY (factura_id)
+    REFERENCES FACTURAS (id)
+);
+
+CREATE TABLE GEOLOCALIZACIONES(
 id int PRIMARY KEY,
 servicio_id int,
 longitud nvarchar2(255),
 latitud nvarchar2(255),
- CONSTRAINT fk_detalle_servicios_ubicacion
+ CONSTRAINT fk_geolocalizaciones_ubicacion
     FOREIGN KEY (servicio_id)
     REFERENCES SERVICIOS (id)
 );
-
 
 CREATE TABLE PAGOS_CONDUCTORES(
 id int PRIMARY KEY,
