@@ -1,0 +1,101 @@
+modelo,anio,marca,placa,tipo_vehiculo
+S3,2003,Mercedes-Benz,CDP546,Uber X
+T4,2007,Ford,XZU479,Uber Black
+A2,2013,Toyota,ZGR933,Uber X
+S3,2011,Buick,BJU221,Uber X
+S3,2008,Volvo,DZG700,Uber X
+T4,2008,Lincoln,MGZ054,Uber X
+T4,2018,Renault,NNW362,Uber X
+PTO6,2003,Peugeot,JQO964,Uber Black
+PTO6,2004,Porsche,EGQ831,Uber X
+T4,2000,Honda,WWA921,Uber X
+T9,2017,Skoda,TLO018,Uber X
+T4,2002,Tata Motors,JJN691,Uber Black
+T9,2002,FAW,OVK390,Uber X
+S3,2006,Mercedes-Benz,KDI026,Uber Black
+T10,2004,Mitsubishi Motors,UWF688,Uber Black
+T4,2006,GMC,EVC629,Uber Black
+A1,2018,Buick,IEQ386,Uber X
+A2,2001,GMC,IKV480,Uber Black
+T4,2000,Acura,WMF230,Uber X
+A2,2016,Mercedes-Benz,NEB098,Uber X
+A2,2019,MINI,YCW081,Uber Black
+RS-7,2017,Smart,JAR784,Uber Black
+A1,2003,Lexus,TFC663,Uber Black
+T4,2000,Chevrolet,FWD478,Uber Black
+TT5,2004,Daimler,ZQO503,Uber X
+PTO6,2015,Seat,MDP923,Uber X
+RS-7,2003,GMC,LMN329,Uber X
+T9,2008,Smart,DQX670,Uber Black
+PTO6,2010,Daihatsu,LDF834,Uber X
+NS-8,2000,Mitsubishi Motors,LIZ590,Uber Black
+RS-7,2010,Renault,XIQ754,Uber X
+NS-8,2016,Jeep,AAR134,Uber X
+NS-8,2013,Infiniti,RBX145,Uber X
+T10,2007,Volvo,IDN501,Uber X
+A2,2003,Infiniti,FBD530,Uber Black
+NS-8,2014,Peugeot,SOC357,Uber Black
+PTO6,2006,Jeep,ITM301,Uber X
+PTO6,2000,Nissan,GKF627,Uber X
+RS-7,2004,Renault,MLA500,Uber X
+T10,2017,Audi,HFO805,Uber X
+TT5,2004,Lexus,VWG037,Uber X
+T4,2010,Audi,GTZ990,Uber X
+PTO6,2015,Subaru,VED467,Uber X
+RS-7,2011,Dodge,WXM598,Uber Black
+RS-7,2005,Subaru,YYV530,Uber X
+S3,2013,Skoda,PJY413,Uber X
+T10,2013,Mitsubishi Motors,FBE133,Uber Black
+S3,2014,Buick,FBW237,Uber X
+PTO6,2007,Buick,OUB774,Uber X
+PTO6,2018,Volvo,CEO078,Uber Black
+RS-7,2005,Smart,ZXD584,Uber X
+RS-7,2013,Volvo,YBI883,Uber X
+TT5,2019,Renault,RDJ479,Uber Black
+T4,2012,Jeep,CBX127,Uber Black
+RS-7,2010,Mazda,DHE068,Uber Black
+T10,2002,Daimler,DYM935,Uber X
+T9,2001,Seat,PEX139,Uber Black
+S3,2003,Volvo,NCC936,Uber Black
+NS-8,2017,Subaru,BQM078,Uber X
+RS-7,2003,Seat,RUL268,Uber Black
+A1,2005,RAM Trucks,EXI810,Uber Black
+PTO6,2012,Ford,HKA167,Uber Black
+PTO6,2017,Jeep,XEN170,Uber Black
+T9,2018,Audi,JMI209,Uber Black
+T10,2013,Mitsubishi Motors,JUS223,Uber X
+A1,2009,Dacia,VJU382,Uber Black
+TT5,2010,BMW,SXQ050,Uber X
+S3,2013,Audi,AUD734,Uber Black
+T9,2016,Jeep,NJV657,Uber X
+T10,2007,Buick,JYI609,Uber X
+S3,2004,Honda,FKZ382,Uber X
+TT5,2017,Skoda,CFM649,Uber Black
+T4,2017,Mahindra and Mahindra,ELJ562,Uber X
+A1,2004,Audi,YNV138,Uber Black
+T4,2006,Ferrari,XFT159,Uber Black
+TT5,2013,Jeep,SJF207,Uber Black
+PTO6,2013,Infiniti,UJX849,Uber X
+NS-8,2011,Mitsubishi Motors,XOU900,Uber Black
+T4,2013,Peugeot,MMU489,Uber Black
+TT5,2018,General Motors,KUI969,Uber X
+RS-7,2000,Infiniti,QHB682,Uber Black
+RS-7,2016,Smart,ENS452,Uber X
+T4,2009,Audi,OQK388,Uber X
+PTO6,2009,Mitsubishi Motors,VFQ878,Uber X
+S3,2001,Daihatsu,GDH145,Uber Black
+PTO6,2003,Cadillac,UWT168,Uber Black
+TT5,2009,Mazda,RXV151,Uber X
+PTO6,2001,Mercedes-Benz,ZZO803,Uber Black
+T9,2017,Tata Motors,GHJ812,Uber X
+RS-7,2019,Tata Motors,FWT161,Uber Black
+RS-7,2011,Skoda,MGM617,Uber Black
+S3,2007,Porsche,AAT881,Uber Black
+A1,2016,Mitsubishi Motors,HTZ796,Uber X
+A2,2010,Citroën,OAL223,Uber X
+A2,2004,Dongfeng Motor,KDL585,Uber Black
+RS-7,2013,Renault,OQE752,Uber X
+RS-7,2001,Buick,QYD981,Uber Black
+T9,2007,Lincoln,NYN876,Uber Black
+T10,2016,Daimler,TYW545,Uber X
+PTO6,2010,Ferrari,PVQ415,Uber Black
