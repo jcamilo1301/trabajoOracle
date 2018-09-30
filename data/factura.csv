@@ -1,0 +1,12 @@
+servicio_id,medio_pago_id,valor,estado
+1,1,17900,Pendiente
+2,2,10000,Liquidada
+3,3,10000,Pendiente
+4,4,10000,Pendiente
+5,5,18000,Pendiente
+6,6,10000,Liquidada
+7,7,10000,Liquidada
+8,8,10000,Pendiente
+9,9,10000,Liquidada
+10,10,10000,Pendiente
+11,11,16000,Pendiente
