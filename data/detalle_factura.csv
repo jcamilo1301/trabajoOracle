@@ -1,0 +1,13 @@
+factura_id,concepto,valor
+1,viaje,10000
+1,peaje,7900
+2,viaje,10000
+3,viaje,10000
+4,viaje,10000
+5,viaje,10000
+5,peaje,8000
+6,viaje,10000
+7,viaje,10000
+8,viaje,10000
+9,viaje,10000
+9,peaje,6000
