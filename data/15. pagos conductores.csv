@@ -1,0 +1,101 @@
+conductor_id,medio_pago_id,valor,fecha_corte_inicial,fecha_corte_final,observaciones
+87,10,479737,2018/07/28,2019/06/15,"Lorem ipsum dolor sit amet, consectetuer"
+67,9,846456,2018/09/29,2018/07/31,Lorem ipsum dolor sit
+84,8,1206813,2019/02/17,2018/07/25,Lorem ipsum dolor
+38,3,1048192,2019/05/24,2019/03/30,Lorem ipsum
+47,10,1253404,2019/04/20,2019/05/12,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+91,2,621743,2017/12/21,2017/12/28,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+1,3,457179,2019/06/15,2018/09/02,"Lorem ipsum dolor sit amet,"
+87,1,1478945,2018/08/31,2018/07/01,Lorem
+25,10,676019,2018/02/24,2017/10/05,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+42,1,836422,2018/11/25,2018/05/07,Lorem ipsum dolor sit
+16,3,873750,2018/05/15,2018/01/16,Lorem ipsum dolor sit
+81,2,353016,2019/05/28,2019/09/27,Lorem ipsum dolor
+41,2,886295,2018/11/03,2019/08/17,Lorem ipsum dolor sit
+83,3,1437238,2019/05/01,2018/03/10,Lorem ipsum dolor sit
+63,7,472938,2019/07/09,2018/06/09,Lorem ipsum dolor sit
+4,9,639351,2017/09/24,2019/08/12,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+48,1,1297161,2018/09/04,2018/07/23,"Lorem ipsum dolor sit amet,"
+95,10,315426,2018/10/16,2018/11/24,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+17,7,911497,2018/08/15,2018/02/22,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+35,5,1018218,2019/04/08,2019/08/12,Lorem ipsum
+50,1,661227,2017/09/28,2017/12/09,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+27,6,343310,2018/06/04,2019/04/21,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+93,5,504982,2019/05/13,2019/09/11,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+12,3,361485,2018/02/17,2019/03/15,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+59,3,1480821,2018/09/18,2018/03/30,Lorem
+10,7,1096978,2018/02/16,2019/02/21,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+17,6,632640,2018/06/11,2018/03/01,Lorem ipsum dolor
+93,7,689471,2018/09/26,2019/06/13,Lorem ipsum dolor sit
+27,8,602809,2018/01/31,2019/04/21,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+20,5,332986,2018/09/24,2018/09/19,Lorem ipsum
+37,4,990956,2017/09/05,2018/08/01,Lorem
+76,1,1246105,2018/07/29,2018/05/05,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+7,5,1056658,2018/05/27,2018/04/30,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+75,10,825058,2018/01/05,2018/03/22,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+57,2,1262610,2019/01/10,2018/02/18,Lorem ipsum dolor
+25,1,1459379,2018/05/05,2019/06/20,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+8,8,346961,2017/09/25,2018/03/31,Lorem ipsum dolor sit
+10,5,1324675,2017/11/18,2018/06/17,Lorem ipsum
+95,9,1152564,2018/01/14,2019/07/21,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+89,3,899559,2019/01/17,2018/07/01,Lorem ipsum dolor
+58,2,1060005,2017/10/12,2017/10/10,Lorem ipsum dolor
+47,6,1053066,2019/08/28,2019/03/02,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+77,1,1473479,2017/12/19,2018/08/02,"Lorem ipsum dolor sit amet, consectetuer"
+11,8,377089,2019/05/13,2019/09/09,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+92,5,256894,2018/11/18,2018/11/16,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+8,7,413376,2018/02/11,2017/12/11,"Lorem ipsum dolor sit amet,"
+63,7,1030410,2018/06/04,2018/12/24,Lorem ipsum
+35,2,735393,2019/04/20,2018/07/02,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+62,4,911837,2018/11/01,2019/03/18,"Lorem ipsum dolor sit amet, consectetuer"
+8,6,465587,2018/11/27,2018/06/15,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+95,1,505041,2017/11/11,2018/06/26,Lorem
+69,2,408999,2019/03/28,2018/09/05,"Lorem ipsum dolor sit amet, consectetuer"
+18,9,1211473,2017/10/23,2019/07/06,"Lorem ipsum dolor sit amet, consectetuer"
+7,8,884641,2019/04/14,2017/12/10,Lorem
+26,2,560544,2018/03/11,2018/07/21,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+43,7,1209820,2019/02/10,2019/04/09,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+12,2,1199295,2018/10/28,2019/02/16,Lorem ipsum dolor sit
+68,1,611827,2019/07/08,2019/04/03,Lorem
+88,2,1270639,2019/05/17,2019/02/06,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+13,10,1172460,2017/12/03,2018/05/20,Lorem ipsum
+52,3,1287207,2019/02/12,2017/10/06,"Lorem ipsum dolor sit amet, consectetuer"
+91,1,594991,2018/10/26,2019/05/08,"Lorem ipsum dolor sit amet, consectetuer"
+84,2,1076514,2017/09/12,2017/10/21,Lorem ipsum dolor sit
+5,6,805948,2017/10/26,2018/11/29,Lorem
+68,3,1457360,2019/01/20,2018/07/19,Lorem
+40,5,410047,2017/10/19,2019/05/25,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur"
+21,8,1163104,2018/06/13,2019/01/24,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+58,5,757551,2019/07/05,2018/11/14,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+41,5,1028669,2017/09/16,2019/04/06,Lorem ipsum dolor
+18,5,861536,2018/09/05,2018/07/11,Lorem ipsum dolor
+11,10,283699,2018/08/19,2019/07/26,"Lorem ipsum dolor sit amet,"
+64,5,769464,2018/03/21,2017/10/26,"Lorem ipsum dolor sit amet,"
+50,5,1136393,2019/04/17,2018/07/05,Lorem ipsum dolor
+23,5,805095,2018/10/19,2019/03/12,Lorem ipsum
+62,4,849892,2019/04/03,2018/05/01,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+90,9,967422,2019/08/24,2019/03/02,"Lorem ipsum dolor sit amet, consectetuer"
+74,2,785768,2019/08/25,2018/09/22,Lorem
+95,9,1224548,2017/10/12,2019/08/22,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+46,3,679769,2019/06/03,2019/01/11,Lorem
+94,5,583353,2019/04/17,2019/03/21,Lorem ipsum dolor sit
+53,7,1458687,2019/01/18,2018/01/03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+32,3,1148740,2018/04/26,2018/10/01,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+50,8,1368626,2018/08/16,2017/10/10,Lorem
+34,9,634721,2017/11/25,2018/10/14,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+76,6,977946,2018/05/21,2018/01/25,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+19,8,890059,2019/05/25,2017/10/27,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+83,9,1089132,2017/11/10,2018/01/05,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+53,3,284619,2018/09/10,2019/09/11,"Lorem ipsum dolor sit amet, consectetuer adipiscing"
+6,8,1196183,2018/05/02,2017/10/31,Lorem ipsum dolor sit
+43,4,601209,2019/06/01,2018/05/31,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed"
+41,4,1224830,2018/01/06,2018/06/24,"Lorem ipsum dolor sit amet,"
+35,9,671314,2019/08/19,2017/12/12,Lorem ipsum dolor
+73,5,1206093,2018/10/23,2018/05/22,Lorem ipsum
+95,8,987864,2019/02/19,2018/12/31,Lorem ipsum
+87,1,791790,2019/05/01,2019/01/05,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+55,1,1288786,2018/06/19,2019/06/02,Lorem ipsum
+76,2,1078333,2019/02/13,2019/05/11,Lorem
+42,4,434005,2019/07/20,2018/04/22,Lorem ipsum
+37,1,1117251,2018/06/07,2018/07/20,Lorem ipsum
+70,6,888442,2019/04/27,2018/09/03,"Lorem ipsum dolor sit amet,"
