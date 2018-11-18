@@ -155,3 +155,75 @@ ALTER TABLE CIUDADES
   WHERE NOMBRE='Tampa';
   
  
+  
+--5. Crear una función llamada VALOR_DISTANCIA que reciba la distancia en kilómetros y el nombre de
+--la ciudad donde se hizo el servicio. Con esta información deberá buscar el valor por cada kilómetro
+--dependiendo de la ciudad donde esté ubicado el viaje. Deberá retornar el resultado de multiplicar la
+--distancia recorrida y el valor de cada kilómetro dependiendo de la ciudad. Si la distancia es menor a 0
+--kilómetros o la ciudad no es válida deberá levantar una excepción propia. Ejemplo: Viaje_ID: 342 que
+--fue hecho en Medellín y la distancia fue 20.68km. En este caso deberá retornar 20.68 * 764.525994 =
+--15810.3976.
+
+create  or replace function VALOR_DISTANCIA(distancia  in number, nombre_ciudad in varchar2) 
+return number is
+--declaracion variables
+resultado number;
+KILOMETRO EXCEPTION;
+begin
+--cuerpo pl
+    IF distancia<0 then 
+    RAISE KILOMETRO;
+    END IF;
+    select  COALESCE(valor_kilometro,0)* distancia into resultado from ciudades where nombre=nombre_ciudad;
+    return ROUND(resultado,4);
+    EXCEPTION  
+    WHEN KILOMETRO THEN 
+    dbms_output.put_line('LA DISTANCIA DEBE SER MAYOR O IGUAL A CERO');
+    RETURN -1;
+     WHEN NO_DATA_FOUND THEN
+     dbms_output.put_line('LA CIUDAD INGRESADA NO EXISTE O NO TIENE UN VALOR ASOCIADO');
+     RETURN -1;
+end;
+
+declare
+a  number := 0;
+begin
+a:=VALOR_DISTANCIA(10,'Medellin');
+dbms_output.put_line('resultado: ' || a);
+end;
+
+--6. Crear una función llamada VALOR_TIEMPO que reciba la cantidad de minutos del servicio y el
+--nombre de la ciudad donde se hizo el servicio. Con esta información deberá buscar el valor por cada
+--minuto dependiendo de la ciudad donde esté ubicado el viaje. Deberá retornar el resultado de
+--multiplicar la distancia recorrida y el valor de cada minuto dependiendo de la ciudad. Si la cantidad de
+--minutos es menor a 0 o la ciudad no es válida deberá levantar una excepción propia. Ejemplo:
+--Viaje_ID: 342 que fue hecho en Medellín y el tiempo fue 28 minutos. En este caso deberá retornar 28
+--* 178.571429 = 5000.00001 (0.25)
+
+create  or replace function VALOR_TIEMPO(minutos  in number, nombre_ciudad in varchar2) 
+return number IS
+resultado number;
+MINUTOS_ERROR EXCEPTION;
+begin
+--cuerpo pl
+    IF minutos<0 then 
+    RAISE MINUTOS_ERROR;
+    END IF;
+    select  COALESCE(valor_minuto,0)* minutos into resultado from ciudades where nombre=nombre_ciudad;
+    return ROUND(resultado,5);
+    EXCEPTION  
+    WHEN MINUTOS_ERROR THEN 
+    dbms_output.put_line('LA CANTIDAD DE MINUTOS DEBE SER MAYOR O IGUAL A CERO');
+    RETURN -1;
+     WHEN NO_DATA_FOUND THEN
+     dbms_output.put_line('LA CIUDAD INGRESADA NO EXISTE O NO TIENE UN VALOR ASOCIADO');
+     RETURN -1;
+end;
+
+declare
+a  number := 0;
+begin
+a:=VALOR_TIEMPO(125,'MedelliIKn');
+dbms_output.put_line('resultado: ' || a);
+
+end;
