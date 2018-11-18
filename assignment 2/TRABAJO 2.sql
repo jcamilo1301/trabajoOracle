@@ -1,8 +1,8 @@
-  --1. Crear una vista llamada “MEDIOS_PAGO_CLIENTES” que contenga las siguientes columnas:
---CLIENTE_ID, NOMBRE_CLIENTE (Si tiene el nombre y el apellido separados en columnas, deberán
+  --1. Crear una vista llamada ï¿½MEDIOS_PAGO_CLIENTESï¿½ que contenga las siguientes columnas:
+--CLIENTE_ID, NOMBRE_CLIENTE (Si tiene el nombre y el apellido separados en columnas, deberï¿½n
 --estar unidas en una sola), MEDIO_PAGO_ID, TIPO (TDC, Android, Paypal, Efectivo),
 --DETALLES_MEDIO_PAGO, EMPRESARIAL (FALSO o VERDADERO), NOMBRE_EMPRESA (Si la
---columna Empresarial es falso, este campo aparecerá Nulo)
+--columna Empresarial es falso, este campo aparecerï¿½ Nulo)
  CREATE VIEW MEDIOS_PAGO_CLIENTES
 AS SELECT U.ID AS CLIENTE_ID,NOMBRE||' '||APELLIDO AS NOMBRE_CLIENTE,MPU.ID AS MEDIO_PAGO_ID ,mpu.tipo 
 ,CASE 
@@ -14,8 +14,8 @@ INNER JOIN medios_pago_usuario MPU ON U.ID = mpu.usuario_id
 LEFT JOIN usuarios_empresas USE ON u.id= use.empresa_id
 LEFT JOIN EMPRESAS EMP ON use.empresa_id= emp.id;
 
---2. Cree una vista que permita listar los viajes de cada cliente ordenados cronológicamente. El nombre
---de la vista será “VIAJES_CLIENTES”, los campos que tendrá son: FECHA_VIAJE,
+--2. Cree una vista que permita listar los viajes de cada cliente ordenados cronolï¿½gicamente. El nombre
+--de la vista serï¿½ ï¿½VIAJES_CLIENTESï¿½, los campos que tendrï¿½ son: FECHA_VIAJE,
 --NOMBRE_CONDUCTOR, PLACA_VEHICULO, NOMBRE_CLIENTE, VALOR_TOTAL,
 --TARIFA_DINAMICA (FALSO O VERDADERO), TIPO_SERVICIO (UberX o UberBlack),
 --CIUDAD_VIAJE.
@@ -32,8 +32,8 @@ INNER JOIN VEHICULOS VE ON VE.ID= AV.VEHICULO_ID
 INNER JOIN FACTURAS FAC ON fac.servicio_id=s.id
 INNER JOIN CIUDADES CIU ON u.ciudad_id=CIU.ID;
 
---3. Cree y evidencie el plan de ejecución de la vista VIAJES_CLIENTES. Cree al menos un índice donde
---mejore el rendimiento del query y muestre el nuevo plan de ejecución
+--3. Cree y evidencie el plan de ejecuciï¿½n de la vista VIAJES_CLIENTES. Cree al menos un ï¿½ndice donde
+--mejore el rendimiento del query y muestre el nuevo plan de ejecuciï¿½n
 
 
 
@@ -62,9 +62,9 @@ FROM TABLE(DBMS_XPLAN.DISPLAY('PLAN_TABLE','PLAN2','TYPICAL'));
 
 
 
---4. Las directivas han decidido implementar el valor de la tarifa por cada kilómetro recorrido y el valor de
---la tarifa por minuto transcurrido de acuerdo a cada ciudad. También han decidido almacenar el valor
---de la tarifa base para cada ciudad. Para esto usted deberá crear tres de columnas de tipo numérico y
+--4. Las directivas han decidido implementar el valor de la tarifa por cada kilï¿½metro recorrido y el valor de
+--la tarifa por minuto transcurrido de acuerdo a cada ciudad. Tambiï¿½n han decidido almacenar el valor
+--de la tarifa base para cada ciudad. Para esto usted deberï¿½ crear tres de columnas de tipo numï¿½rico y
 --en la tabla que sea conveniente (Se sugiere que sea en la tabla de Ciudades en caso de tenerla-
 --disponible) Ejemplo:
 
@@ -77,7 +77,7 @@ ALTER TABLE CIUDADES
   ALTER TABLE CIUDADES
   ADD VALOR_BASE NUMBER;
 
---a. Medellín: el valor por cada kilómetro es: 764.525994 pesos colombianos y el valor por minuto
+--a. Medellï¿½n: el valor por cada kilï¿½metro es: 764.525994 pesos colombianos y el valor por minuto
 --es de: 178.571429 pesos colombianos. El valor de la tarifa base es de 2500
   UPDATE CIUDADES SET VALOR_MINUTO=178.571429
   WHERE NOMBRE='Medellin';
@@ -86,7 +86,7 @@ ALTER TABLE CIUDADES
     UPDATE CIUDADES SET VALOR_BASE=2500
   WHERE NOMBRE='Medellin';
 
---b. Bogotá: el valor por cada kilómetro es: 522.43456 pesos colombianos y el valor por minuto es
+--b. Bogotï¿½: el valor por cada kilï¿½metro es: 522.43456 pesos colombianos y el valor por minuto es
 --de: 173.1273 pesos colombianos. El valor de la tarifa base es de 2400
   
   UPDATE CIUDADES SET VALOR_MINUTO= 173.1273
@@ -96,7 +96,7 @@ ALTER TABLE CIUDADES
     UPDATE CIUDADES SET VALOR_BASE=2400
   WHERE NOMBRE='Bogota';
 
---c. Llenar diversos valores para las demás ciudad.
+--c. Llenar diversos valores para las demï¿½s ciudad.
 
   UPDATE CIUDADES SET VALOR_MINUTO= 1
   WHERE NOMBRE='Miami';
@@ -156,12 +156,12 @@ ALTER TABLE CIUDADES
   
  
   
---5. Crear una función llamada VALOR_DISTANCIA que reciba la distancia en kilómetros y el nombre de
---la ciudad donde se hizo el servicio. Con esta información deberá buscar el valor por cada kilómetro
---dependiendo de la ciudad donde esté ubicado el viaje. Deberá retornar el resultado de multiplicar la
---distancia recorrida y el valor de cada kilómetro dependiendo de la ciudad. Si la distancia es menor a 0
---kilómetros o la ciudad no es válida deberá levantar una excepción propia. Ejemplo: Viaje_ID: 342 que
---fue hecho en Medellín y la distancia fue 20.68km. En este caso deberá retornar 20.68 * 764.525994 =
+--5. Crear una funciï¿½n llamada VALOR_DISTANCIA que reciba la distancia en kilï¿½metros y el nombre de
+--la ciudad donde se hizo el servicio. Con esta informaciï¿½n deberï¿½ buscar el valor por cada kilï¿½metro
+--dependiendo de la ciudad donde estï¿½ ubicado el viaje. Deberï¿½ retornar el resultado de multiplicar la
+--distancia recorrida y el valor de cada kilï¿½metro dependiendo de la ciudad. Si la distancia es menor a 0
+--kilï¿½metros o la ciudad no es vï¿½lida deberï¿½ levantar una excepciï¿½n propia. Ejemplo: Viaje_ID: 342 que
+--fue hecho en Medellï¿½n y la distancia fue 20.68km. En este caso deberï¿½ retornar 20.68 * 764.525994 =
 --15810.3976.
 
 create  or replace function VALOR_DISTANCIA(distancia  in number, nombre_ciudad in varchar2) 
@@ -192,12 +192,12 @@ a:=VALOR_DISTANCIA(10,'Medellin');
 dbms_output.put_line('resultado: ' || a);
 end;
 
---6. Crear una función llamada VALOR_TIEMPO que reciba la cantidad de minutos del servicio y el
---nombre de la ciudad donde se hizo el servicio. Con esta información deberá buscar el valor por cada
---minuto dependiendo de la ciudad donde esté ubicado el viaje. Deberá retornar el resultado de
+--6. Crear una funciï¿½n llamada VALOR_TIEMPO que reciba la cantidad de minutos del servicio y el
+--nombre de la ciudad donde se hizo el servicio. Con esta informaciï¿½n deberï¿½ buscar el valor por cada
+--minuto dependiendo de la ciudad donde estï¿½ ubicado el viaje. Deberï¿½ retornar el resultado de
 --multiplicar la distancia recorrida y el valor de cada minuto dependiendo de la ciudad. Si la cantidad de
---minutos es menor a 0 o la ciudad no es válida deberá levantar una excepción propia. Ejemplo:
---Viaje_ID: 342 que fue hecho en Medellín y el tiempo fue 28 minutos. En este caso deberá retornar 28
+--minutos es menor a 0 o la ciudad no es vï¿½lida deberï¿½ levantar una excepciï¿½n propia. Ejemplo:
+--Viaje_ID: 342 que fue hecho en Medellï¿½n y el tiempo fue 28 minutos. En este caso deberï¿½ retornar 28
 --* 178.571429 = 5000.00001 (0.25)
 
 create  or replace function VALOR_TIEMPO(minutos  in number, nombre_ciudad in varchar2) 
@@ -227,3 +227,61 @@ a:=VALOR_TIEMPO(125,'MedelliIKn');
 dbms_output.put_line('resultado: ' || a);
 
 end;
+
+
+
+-- 7. Crear un procedimiento almacenado que se llame CALCULAR_TARIFA, deberÃ¡ recibir el ID del viaje.
+--Para calcular la tarifa se requiere lo siguiente (0.5):
+--a. Si el estado del viaje es diferente a REALIZADO, deberÃ¡ insert ar 0 en el valor de la tarifa.
+--b. Buscar el valor de la tarifa base dependiendo de la ciudad donde se haya hecho el servicio.
+--c. Invocar la funciÃ³n VALOR_DISTANCIA
+--d. Invocar la funciÃ³n VALOR_TIEMPO
+--e. DeberÃ¡ buscar todos los detalles de cada viaje y sumarlos.
+--f. Sumar la tarifa base mÃ¡s el resultado de la funciÃ³n VALOR_DISTANCIA mÃ¡s el resultado de
+--la funciÃ³n VALOR_TIEMPO y el resultado de la sumatoria de los detalles del viaje.
+--g. Actualizar el registro del viaje con el resultado obtenido.
+--h. Si alguna de las funciones levanta una excepciÃ³n, esta deberÃ¡ ser controlada y actualizar el
+--valor del viaje con 0.
+
+CREATE OR REPLACE PROCEDURE CALCULAR_TARIFA(VIAJE_ID IN INT) AS
+BEGIN
+declare 
+  ESTADOFACTURA VARCHAR2(256);
+  VALOR_BASE  INT;
+  VALOR_DISTANCIA_CALCULADA NUMBER;
+  VALOR_TIEMPO_CALCULADA NUMBER;
+  CIUDAD VARCHAR2(256);
+  VALOR_DETALLES NUMBER;
+BEGIN
+
+SELECT ESTADO INTO ESTADOFACTURA FROM SERVICIOS WHERE ID=2;
+IF(ESTADOFACTURA )<>'REALIZADO' THEN
+ UPDATE FACTURAS SET VALOR=0 WHERE SERVICIO_ID=VIAJE_ID;
+
+SELECT CIU.VALOR_BASE,ciu.nombre INTO VALOR_BASE,CIUDAD FROM SERVICIOS SER
+ INNER JOIN ASIGNACIONES_VEHICULOS ASV ON SER.ASIGNACION_VEHICULO_ID=ASV.ID
+ INNER JOIN USUARIOS USU ON USU.ID= ASV.USUARIO_ID
+ INNER JOIN CIUDADES CIU ON USU.CIUDAD_ID=CIU.ID
+ WHERE SER.ID=VIAJE_ID;
+ 
+ SELECT VALOR_TIEMPO(TIEMPO_REQUERIDO,CIUDAD),  VALOR_DISTANCIA(DISTANCIA_RECORRIDA,CIUDAD) INTO VALOR_TIEMPO_CALCULADA,VALOR_DISTANCIA_CALCULADA
+    FROM SERVICIOS
+    WHERE ID=VIAJE_ID;
+    
+    IF (VALOR_TIEMPO_CALCULADA = -1 OR VALOR_DISTANCIA_CALCULADA = -1) THEN
+        UPDATE FACTURAS SET VALOR= 0
+        WHERE SERVICIO_ID=VIAJE_ID;
+        RETURN;
+    END IF;
+    
+    SELECT SUM(DFAC.VALOR) INTO VALOR_DETALLES FROM DETALLE_FACTURAS DFAC
+        INNER JOIN FACTURAS FAC ON FAC.ID=dfac.factura_id
+        WHERE SERVICIO_ID=VIAJE_ID;
+    
+    UPDATE FACTURAS SET VALOR= (VALOR_BASE +  VALOR_DISTANCIA_CALCULADA +  VALOR_TIEMPO_CALCULADA +  VALOR_DETALLES)
+    WHERE SERVICIO_ID=VIAJE_ID;
+    
+END IF;
+end;
+
+END CALCULAR_TARIFA;
